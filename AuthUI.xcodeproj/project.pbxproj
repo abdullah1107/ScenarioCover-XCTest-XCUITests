@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		B40857F02B16722E008A31D4 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40857EF2B16722E008A31D4 /* LoginViewModel.swift */; };
+		B44001A52F35D09F00C24DC2 /* products.json in Resources */ = {isa = PBXBuildFile; fileRef = B44001A22F35D09F00C24DC2 /* products.json */; };
+		B44001A62F35D09F00C24DC2 /* users.json in Resources */ = {isa = PBXBuildFile; fileRef = B44001A32F35D09F00C24DC2 /* users.json */; };
+		B44001A72F35D09F00C24DC2 /* MockDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44001A12F35D09F00C24DC2 /* MockDataService.swift */; };
 		B440DD852B12FD9200692D7D /* LoginAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B440DD842B12FD9200692D7D /* LoginAPI.swift */; };
 		B440DD872B12FFE700692D7D /* APIRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B440DD862B12FFE700692D7D /* APIRequestProtocol.swift */; };
 		B45A89A42B0ADCB8006FC2F1 /* AuthUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45A89A32B0ADCB8006FC2F1 /* AuthUIApp.swift */; };
@@ -43,6 +46,13 @@
 		B4E1CEA82B268425000A29D4 /* DashBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E1CEA72B268425000A29D4 /* DashBoard.swift */; };
 		B4E1CEAA2B268434000A29D4 /* DashBoardScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E1CEA92B268434000A29D4 /* DashBoardScreen.swift */; };
 		B4E1CEAC2B26844A000A29D4 /* ProductDashBoardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E1CEAB2B26844A000A29D4 /* ProductDashBoardTests.swift */; };
+		B4F0B0012F00000000A10001 /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F0A0012F00000000A10001 /* MockURLProtocol.swift */; };
+		B4F0B0022F00000000A10001 /* LoginAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F0A0022F00000000A10001 /* LoginAPITests.swift */; };
+		B4F0B0032F00000000A10001 /* ProductsAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F0A0032F00000000A10001 /* ProductsAPITests.swift */; };
+		B4F0CD012F00000000A10001 /* ProductDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F0C0012F00000000A10001 /* ProductDetailModel.swift */; };
+		B4F0CD022F00000000A10001 /* ProductDetailsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F0C0022F00000000A10001 /* ProductDetailsService.swift */; };
+		B4F0CD032F00000000A10001 /* ProductDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F0C0032F00000000A10001 /* ProductDetailsViewModel.swift */; };
+		B4F0CD042F00000000A10001 /* ProductDetailsAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F0C0042F00000000A10001 /* ProductDetailsAPITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +74,9 @@
 
 /* Begin PBXFileReference section */
 		B40857EF2B16722E008A31D4 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		B44001A12F35D09F00C24DC2 /* MockDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataService.swift; sourceTree = "<group>"; };
+		B44001A22F35D09F00C24DC2 /* products.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = products.json; sourceTree = "<group>"; };
+		B44001A32F35D09F00C24DC2 /* users.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = users.json; sourceTree = "<group>"; };
 		B440DD842B12FD9200692D7D /* LoginAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAPI.swift; sourceTree = "<group>"; };
 		B440DD862B12FFE700692D7D /* APIRequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestProtocol.swift; sourceTree = "<group>"; };
 		B45A89A02B0ADCB8006FC2F1 /* AuthUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AuthUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,6 +114,14 @@
 		B4E1CEA72B268425000A29D4 /* DashBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoard.swift; sourceTree = "<group>"; };
 		B4E1CEA92B268434000A29D4 /* DashBoardScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoardScreen.swift; sourceTree = "<group>"; };
 		B4E1CEAB2B26844A000A29D4 /* ProductDashBoardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDashBoardTests.swift; sourceTree = "<group>"; };
+		B4F0A0012F00000000A10001 /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
+		B4F0A0022F00000000A10001 /* LoginAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAPITests.swift; sourceTree = "<group>"; };
+		B4F0A0032F00000000A10001 /* ProductsAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsAPITests.swift; sourceTree = "<group>"; };
+		B4F0C0012F00000000A10001 /* ProductDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailModel.swift; sourceTree = "<group>"; };
+		B4F0C0022F00000000A10001 /* ProductDetailsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsService.swift; sourceTree = "<group>"; };
+		B4F0C0032F00000000A10001 /* ProductDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewModel.swift; sourceTree = "<group>"; };
+		B4F0C0042F00000000A10001 /* ProductDetailsAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsAPITests.swift; sourceTree = "<group>"; };
+		B86A68F63078014000DAEC28 /* AuthUI.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = AuthUI.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,9 +158,20 @@
 			path = LoginViewModel;
 			sourceTree = "<group>";
 		};
+		B44001A42F35D09F00C24DC2 /* MockData2 */ = {
+			isa = PBXGroup;
+			children = (
+				B44001A12F35D09F00C24DC2 /* MockDataService.swift */,
+				B44001A22F35D09F00C24DC2 /* products.json */,
+				B44001A32F35D09F00C24DC2 /* users.json */,
+			);
+			path = MockData2;
+			sourceTree = "<group>";
+		};
 		B45A89972B0ADCB8006FC2F1 = {
 			isa = PBXGroup;
 			children = (
+				B86A68F63078014000DAEC28 /* AuthUI.xctestplan */,
 				B45A89A22B0ADCB8006FC2F1 /* AuthApp */,
 				B45A89B32B0ADCBB006FC2F1 /* AuthLogicTests */,
 				B45A89BD2B0ADCBB006FC2F1 /* AuthUITests */,
@@ -160,6 +192,7 @@
 		B45A89A22B0ADCB8006FC2F1 /* AuthApp */ = {
 			isa = PBXGroup;
 			children = (
+				B44001A42F35D09F00C24DC2 /* MockData2 */,
 				B45A89A72B0ADCBB006FC2F1 /* Assets.xcassets */,
 				B45A89A32B0ADCB8006FC2F1 /* AuthUIApp.swift */,
 				B45A89A52B0ADCB8006FC2F1 /* ContentView.swift */,
@@ -186,6 +219,10 @@
 			isa = PBXGroup;
 			children = (
 				B4A11F962B24F7CF00FD43CC /* Login */,
+				B4F0C0042F00000000A10001 /* ProductDetailsAPITests.swift */,
+				B4F0A0012F00000000A10001 /* MockURLProtocol.swift */,
+				B4F0A0022F00000000A10001 /* LoginAPITests.swift */,
+				B4F0A0032F00000000A10001 /* ProductsAPITests.swift */,
 			);
 			path = AuthLogicTests;
 			sourceTree = "<group>";
@@ -305,6 +342,9 @@
 		B4CFC6742B0B210500C56712 /* Details */ = {
 			isa = PBXGroup;
 			children = (
+				B4F0C0012F00000000A10001 /* ProductDetailModel.swift */,
+				B4F0C0022F00000000A10001 /* ProductDetailsService.swift */,
+				B4F0C0032F00000000A10001 /* ProductDetailsViewModel.swift */,
 				B48336782B2805D9007FD3DC /* ProductDetails.swift */,
 			);
 			path = Details;
@@ -432,7 +472,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1500;
-				LastUpgradeCheck = 1500;
+				LastUpgradeCheck = 2700;
 				TargetAttributes = {
 					B45A899F2B0ADCB8006FC2F1 = {
 						CreatedOnToolsVersion = 15.0.1;
@@ -475,6 +515,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B44001A52F35D09F00C24DC2 /* products.json in Resources */,
+				B44001A62F35D09F00C24DC2 /* users.json in Resources */,
 				B45A89AB2B0ADCBB006FC2F1 /* Preview Assets.xcassets in Resources */,
 				B45A89A82B0ADCBB006FC2F1 /* Assets.xcassets in Resources */,
 			);
@@ -501,11 +543,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4F0CD012F00000000A10001 /* ProductDetailModel.swift in Sources */,
+				B4F0CD022F00000000A10001 /* ProductDetailsService.swift in Sources */,
+				B4F0CD032F00000000A10001 /* ProductDetailsViewModel.swift in Sources */,
 				B45A89A62B0ADCB8006FC2F1 /* ContentView.swift in Sources */,
 				B4A11FA52B25546F00FD43CC /* HomeViewModel.swift in Sources */,
 				B4CFC6772B0B222700C56712 /* LoginUser.swift in Sources */,
 				B440DD872B12FFE700692D7D /* APIRequestProtocol.swift in Sources */,
 				B4CFC6832B0B2BEF00C56712 /* Log.swift in Sources */,
+				B44001A72F35D09F00C24DC2 /* MockDataService.swift in Sources */,
 				B48336792B2805D9007FD3DC /* ProductDetails.swift in Sources */,
 				B4CFC67A2B0B273D00C56712 /* HTTPMethod.swift in Sources */,
 				B440DD852B12FD9200692D7D /* LoginAPI.swift in Sources */,
@@ -527,7 +573,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4F0CD042F00000000A10001 /* ProductDetailsAPITests.swift in Sources */,
 				B4C1858D2B22BA8900FB2960 /* LoginTests.swift in Sources */,
+				B4F0B0012F00000000A10001 /* MockURLProtocol.swift in Sources */,
+				B4F0B0022F00000000A10001 /* LoginAPITests.swift in Sources */,
+				B4F0B0032F00000000A10001 /* ProductsAPITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -602,6 +652,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = R975Y8X2C9;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -625,6 +676,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -665,6 +717,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = R975Y8X2C9;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -681,6 +734,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -695,7 +749,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AuthApp/Preview Content\"";
-				DEVELOPMENT_TEAM = R975Y8X2C9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = AuthUI;
@@ -704,7 +757,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -728,7 +781,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AuthApp/Preview Content\"";
-				DEVELOPMENT_TEAM = R975Y8X2C9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = AuthUI;
@@ -737,7 +789,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -755,14 +807,12 @@
 		B45A89C82B0ADCBB006FC2F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = R975Y8X2C9;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.appsQube.AuthUIUnitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -777,14 +827,12 @@
 		B45A89C92B0ADCBB006FC2F1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = R975Y8X2C9;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.appsQube.AuthUIUnitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -799,13 +847,12 @@
 		B45A89CB2B0ADCBB006FC2F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = R975Y8X2C9;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.appsQube.AuthUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -821,13 +868,12 @@
 		B45A89CC2B0ADCBB006FC2F1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = R975Y8X2C9;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.appsQube.AuthUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

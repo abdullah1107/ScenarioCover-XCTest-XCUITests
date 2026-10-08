@@ -7,17 +7,13 @@
 
 import SwiftUI
 
-struct HomeScreen: View {
-    @AppStorage("showLoginSuccess") var showToast = false
-    @ObservedObject var homeViewModel:DashBoadProductViewModel
-    @State private var searchText:String = ""
-    
-    init(){
-        homeViewModel = DashBoadProductViewModel()
-        homeViewModel.getAllProducts()
-    }
-    
-    var filteredProducts: [Product] {
+
+struct DashboardProductView: View {
+    @AppStorage("showLoginSuccess") private var showToast = false
+    @StateObject private var homeViewModel = DashBoadProductViewModel()
+    @State private var searchText = ""
+
+    private var filteredProducts: [Product] {
         if searchText.isEmpty {
             return homeViewModel.products
         } else {
@@ -27,45 +23,64 @@ struct HomeScreen: View {
         }
     }
 
-    
     var body: some View {
-        
-//        if !showToast{
-//            LoginSuccessToastView(message: LoginScnerioAlert.successLoginAlert.rawValue, success: $showToast)
-//                .transition(.move(edge: .top))
-//                .accessibilityIdentifier("loginSuccessAlert")
-//        }
-        
-        NavigationView{
-            VStack{
-                List(filteredProducts) { product in
-                    NavigationLink(destination: ProductDetails(product: product)) {
-                        ProductItemRow(product: product)
-                            .onAppear {
-                                if product.id == homeViewModel.products.last?.id {
-                                    homeViewModel.getAllProducts()
-                                }
+        if #available(iOS 16.0, *) {
+            NavigationStack {
+                ZStack(alignment: .top) {
+                    if #available(iOS 17.0, *) {
+                        List(filteredProducts) { product in
+                            NavigationLink {
+                                ProductDetails(product: product)
+                            } label: {
+                                ProductItemRow(product: product)
+                                    .onAppear {
+                                        if product.id == homeViewModel.products.last?.id {
+                                            Task {
+                                                  homeViewModel.getAllProducts()
+                                            }
+                                        }
+                                    }
+                                    .accessibilityIdentifier("productCellItem_\(product.id)")
                             }
-                            .accessibility(identifier: "productCellItem_\(product.id)")
+                        }
+                        .searchable(
+                            text: $searchText,
+                            placement: .navigationBarDrawer(displayMode: .always),
+                            prompt: "Search Product"
+                        )
+                        .accessibilityIdentifier("searchProductIdentifier")
+                        .navigationTitle("Dashboard")
+                        .navigationBarTitleDisplayMode(.large)
+                        .onChange(of: searchText) { _, newValue in
+                            debugPrint("searchText: \(newValue)")
+                        }
+                    } else {
+                        // Fallback on earlier versions
+                    }
+                    
+                    // Optional toast overlay
+                    if showToast {
+                        LoginSuccessToastView(
+                            message: LoginScnerioAlert.successLoginAlert.rawValue,
+                            success: $showToast
+                        )
+                        .transition(.move(edge: .top))
+                        .accessibilityIdentifier("loginSuccessAlert")
+                        .zIndex(1)
                     }
                 }
-                
-                .onChange(of: searchText) { _ in
-                    debugPrint("searchText", searchText)
-                }
-                
-                .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always), prompt: "Search Product")
-                .accessibilityIdentifier("searchProductIdentifier")
-                .navigationTitle("DashBoard")
-                .navigationBarTitleDisplayMode(.large)
             }
+            .task {
+                homeViewModel.getAllProducts()
+            }
+        } else {
+            // Fallback on earlier versions
         }
     }
-
 }
 
 #Preview {
-    HomeScreen()
+    DashboardProductView()
 }
 
 
@@ -148,3 +163,69 @@ struct LoginSuccessToastView: View {
         }
     }
 }
+
+
+
+//struct HomeScreen: View {
+//    @AppStorage("showLoginSuccess") var showToast = false
+//    @ObservedObject var homeViewModel:DashBoadProductViewModel
+//    @State private var searchText:String = ""
+//
+//
+//    init(){
+//        homeViewModel = DashBoadProductViewModel()
+//
+//    }
+//
+//    var filteredProducts: [Product] {
+//        if searchText.isEmpty {
+//            return homeViewModel.products
+//        } else {
+//            return homeViewModel.products.filter { product in
+//                product.title.localizedCaseInsensitiveContains(searchText)
+//            }
+//        }
+//    }
+//
+//
+//    var body: some View {
+//
+////        if !showToast{
+////            LoginSuccessToastView(message: LoginScnerioAlert.successLoginAlert.rawValue, success: $showToast)
+////                .transition(.move(edge: .top))
+////                .accessibilityIdentifier("loginSuccessAlert")
+////        }
+//
+//        NavigationView{
+//            VStack{
+//                List(filteredProducts) { product in
+//                    NavigationLink(destination: ProductDetails(product: product)) {
+//                        ProductItemRow(product: product)
+//                            .onAppear {
+//                                if product.id == homeViewModel.products.last?.id {
+//                                    homeViewModel.getAllProducts()
+//                                }
+//                            }
+//                            .accessibility(identifier: "productCellItem_\(product.id)")
+//                    }
+//                }
+//
+//                .onChange(of: searchText) { _ in
+//                    debugPrint("searchText", searchText)
+//                }
+//
+//                .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always), prompt: "Search Product")
+//                .accessibilityIdentifier("searchProductIdentifier")
+//                .navigationTitle("DashBoard")
+//                .navigationBarTitleDisplayMode(.large)
+//            }
+//
+//        }
+//        .willAppear{
+//            .task{
+//                await homeViewModel.getAllProducts()
+//            }
+//        }
+//    }
+//
+//}

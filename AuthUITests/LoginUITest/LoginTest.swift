@@ -2,7 +2,7 @@
 //  LoginTest.swift
 //  AuthenticationSwiftUIUITests
 //
-//  Created by Muhammad Mamun on 9/12/23.
+//  End-to-end checks of the login flow against the real https://dummyjson.com/auth/login API.
 //
 
 import XCTest
@@ -14,25 +14,23 @@ final class LoginTest: BaseXCTestSetup {
             .tapUserTextField("Mamun")
             .tapPasswordTextField("dfuiu&")
             .tapLoginButton()
-            .assert(\.loginFailedAlertToast, equals: "Please check your credentials and try again")
+            .assert(\.loginFailedAlertToastShown, "Failed-login toast was not shown")
     }
 
-    
-    func testLoginWithvalidCredentials() {
+    func testInvalidLoginStaysOnLoginScreen() {
+        let login = Login.LoginScreen()
+            .tapUserTextField("not-a-user")
+            .tapPasswordTextField("wrong-password")
+            .tapLoginButton()
+        _ = login.loginFailedAlertToast
+        XCTAssertFalse(DashBoard.ProductScreen.isShownQuickly, "Dashboard must not appear after a failed login")
+    }
+
+    func testLoginWithValidCredentials() {
         Login.LoginScreen()
-            .tapUserTextField("kminchelle")
-            .tapPasswordTextField("0lelplR")
+            .tapUserTextField("emilys")
+            .tapPasswordTextField("emilyspass")
             .tapLoginButtonSuccess()
             .assertDisplayed(DashBoard.ProductScreen())
     }
-
 }
-
-
-//0  0  0 = 6
-//1  1  1 = 6
-//2 + 2 + 2 = 6
-//3 * 3 - 3 = 6
-// sqrt(4)+sqrt(4)+sqrt(4)  = 6
-//(5-5)! +  5 = 6
-// 7 7 7

@@ -22,7 +22,10 @@ class LoginViewModel: ObservableObject, LoginUserProtocol{
     @Published var password:String = ""
     @Published var formIsValid = false
     
-    init(){
+    private let loginService: LoginNetworkService
+
+    init(loginService: LoginNetworkService = LoginNetworkService()){
+        self.loginService = loginService
         self.chekLoginFormVilidity()
     }
     
@@ -32,15 +35,29 @@ class LoginViewModel: ObservableObject, LoginUserProtocol{
             completion(.failure(LoginError.invalidInput))
             return
         }
-        //let user = LoginUser(userName: "kminchelle", password: "0lelplR")
+//        
+//        // Use mock data service for authentication
+//        let result = MockDataService.shared.authenticateUser(username: username, password: password)
+//        
+//        switch result {
+//        case .success:
+//            self.success = true
+//            completion(.success(true))
+//        case .failure(let error):
+//            print("Error: \(error.localizedDescription)")
+//            completion(.failure(error))
+//        }
+        
+        // Original API call (commented out - uncomment to use API instead of mock data)
+        
         let user = LoginUser(userName: username, password: password)
-        LoginNetworkService.createUser(urlPath: LoginAPI.getLoginRequestUrl, user: user, responseType: LoginAPI.ReturnType.self)
+        loginService.createUser(urlPath: LoginAPI.getLoginRequestUrl, user: user, responseType: LoginAPI.ReturnType.self)
             .sink(receiveCompletion: { result in
                 switch result {
                 case .finished:
                     break
                 case .failure(let error):
-                    print("Error: \(error.localizedDescription)")
+                    print("TTTError: \(error.localizedDescription)")
                     completion(.failure(LoginError.networkError))
                 }
             }, receiveValue: { [weak self] _ in

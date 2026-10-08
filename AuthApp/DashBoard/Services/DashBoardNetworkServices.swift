@@ -10,7 +10,14 @@ import Combine
 
 
 protocol ProductNetworkRequest{
-    func getAllProducts<ResponseType: Decodable>(endpoint: String, limit:Int?, skip: Int?, responseType: ResponseType.Type) -> Future<ResponseType, NetworkError>
+    func getAllProducts<ResponseType: Decodable>(endpoint: String, limit:Int?, skip: Int?, select: String?, responseType: ResponseType.Type) -> Future<ResponseType, NetworkError>
+}
+
+extension ProductNetworkRequest {
+    /// Convenience for callers that don't need field selection.
+    func getAllProducts<ResponseType: Decodable>(endpoint: String, limit:Int?, skip: Int?, responseType: ResponseType.Type) -> Future<ResponseType, NetworkError> {
+        getAllProducts(endpoint: endpoint, limit: limit, skip: skip, select: nil, responseType: responseType)
+    }
 }
 
 
@@ -23,11 +30,25 @@ class DashBoardProductNetworkServices: ProductNetworkRequest{
         self.urlSession = urlSession
     }
     
-    func getAllProducts<ResponseType: Decodable>(endpoint: String, limit:Int?=30, skip: Int? = nil, responseType: ResponseType.Type) -> Future<ResponseType, NetworkError>{
+    /// Builds `<endpoint>?limit=<n>&skip=<n>[&select=<fields>]`.
+    static func makeURL(endpoint: String, limit: Int?, skip: Int?, select: String?) -> URL? {
+        guard var components = URLComponents(string: endpoint) else { return nil }
+        var items = [
+            URLQueryItem(name: "limit", value: "\(limit ?? 30)"),
+            URLQueryItem(name: "skip", value: "\(skip ?? 0)")
+        ]
+        if let select = select, !select.isEmpty {
+            items.append(URLQueryItem(name: "select", value: select))
+        }
+        components.queryItems = items
+        return components.url
+    }
+    
+    func getAllProducts<ResponseType: Decodable>(endpoint: String, limit:Int?=30, skip: Int? = nil, select: String? = nil, responseType: ResponseType.Type) -> Future<ResponseType, NetworkError>{
         
         return Future <ResponseType, NetworkError> { [weak self] promise in
             
-            guard let self = self,  let url = URL(string: endpoint + "?limit=\(limit ?? 30)&skip=\(skip ?? 0)") else {
+            guard let self = self, let url = DashBoardProductNetworkServices.makeURL(endpoint: endpoint, limit: limit, skip: skip, select: select) else {
                 promise(.failure(NetworkError.invalidURL))
                 return
             }

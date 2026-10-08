@@ -1,0 +1,104 @@
+[
+  {
+    "id": 1,
+    "username": "john_doe",
+    "email": "john.doe@example.com",
+    "firstName": "John",
+    "lastName": "Doe",
+    "gender": "male",
+    "image": "https://i.dummyjson.com/data/users/1/avatar.jpg",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJqb2huX2RvZSIsImlhdCI6MTY5OTk5OTk5OX0.example1"
+  },
+  {
+    "id": 2,
+    "username": "jane_smith",
+    "email": "jane.smith@example.com",
+    "firstName": "Jane",
+    "lastName": "Smith",
+    "gender": "female",
+    "image": "https://i.dummyjson.com/data/users/2/avatar.jpg",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJqYW5lX3NtaXRoIiwiaWF0IjoxNjk5OTk5OTk5fQ.example2"
+  },
+  {
+    "id": 3,
+    "username": "michael_johnson",
+    "email": "michael.johnson@example.com",
+    "firstName": "Michael",
+    "lastName": "Johnson",
+    "gender": "male",
+    "image": "https://i.dummyjson.com/data/users/3/avatar.jpg",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJtaWNoYWVsX2pvaG5zb24iLCJpYXQiOjE2OTk5OTk5OTl9.example3"
+  },
+  {
+    "id": 4,
+    "username": "emily_williams",
+    "email": "emily.williams@example.com",
+    "firstName": "Emily",
+    "lastName": "Williams",
+    "gender": "female",
+    "image": "https://i.dummyjson.com/data/users/4/avatar.jpg",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXNlcm5hbWUiOiJlbWlseV93aWxsaWFtcyIsImlhdCI6MTY5OTk5OTk5OX0.example4"
+  },
+  {
+    "id": 5,
+    "username": "david_brown",
+    "email": "david.brown@example.com",
+    "firstName": "David",
+    "lastName": "Brown",
+    "gender": "male",
+    "image": "https://i.dummyjson.com/data/users/5/avatar.jpg",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwidXNlcm5hbWUiOiJkYXZpZF9icm93biIsImlhdCI6MTY5OTk5OTk5OX0.example5"
+  },
+  {
+    "id": 6,
+    "username": "sarah_davis",
+    "email": "sarah.davis@example.com",
+    "firstName": "Sarah",
+    "lastName": "Davis",
+    "gender": "female",
+    "image": "https://i.dummyjson.com/data/users/6/avatar.jpg",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwidXNlcm5hbWUiOiJzYXJhaF9kYXZpcyIsImlhdCI6MTY5OTk5OTk5OX0.example6"
+  },
+  {
+    "id": 7,
+    "username": "robert_miller",
+    "email": "robert.miller@example.com",
+    "firstName": "Robert",
+    "lastName": "Miller",
+    "gender": "male",
+    "image": "https://i.dummyjson.com/data/users/7/avatar.jpg",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywidXNlcm5hbWUiOiJyb2JlcnRfbWlsbGVyIiwiaWF0IjoxNjk5OTk5OTk5fQ.example7"
+  },
+  {
+    "id": 8,
+    "username": "lisa_wilson",
+    "email": "lisa.wilson@example.com",
+    "firstName": "Lisa",
+    "lastName": "Wilson",
+    "gender": "female",
+    "image": "https://i.dummyjson.com/data/users/8/avatar.jpg",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwidXNlcm5hbWUiOiJsaXNhX3dpbHNvbiIsImlhdCI6MTY5OTk5OTk5OX0.example8"
+  },
+  {
+    "id": 9,
+    "username": "james_moore",
+    "email": "james.moore@example.com",
+    "firstName": "James",
+    "lastName": "Moore",
+    "gender": "male",
+    "image": "https://i.dummyjson.com/data/users/9/avatar.jpg",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OSwidXNlcm5hbWUiOiJqYW1lc19tb29yZSIsImlhdCI6MTY5OTk5OTk5OX0.example9"
+  },
+  {
+    "id": 10,
+    "username": "amanda_taylor",
+    "email": "amanda.taylor@example.com",
+    "firstName": "Amanda",
+    "lastName": "Taylor",
+    "gender": "female",
+    "image": "https://i.dummyjson.com/data/users/10/avatar.jpg",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAsInVzZXJuYW1lIjoiYW1hbmRhX3RheWxvciIsImlhdCI6MTY5OTk5OTk5OX0.example10"
+  }
+]
+
+

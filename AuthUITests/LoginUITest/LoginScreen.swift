@@ -14,7 +14,7 @@ extension Login {
     struct LoginScreen: Screen {
         var displayElement: XCUIElement { titleLabel }
         init() {
-            waitForScreenDisplay()
+            waitForScreenDisplay(timeout: 10) // splash screen shows for ~3s first
         }
     }
 }
@@ -54,8 +54,12 @@ extension Login.LoginScreen {
         return self
     }
     
+    var loginFailedAlertToastShown: Bool {
+        loginFailedToast.waitUntilDisplayed(timeout: 10)
+    }
+
     var loginFailedAlertToast: String {
-        loginFailedToast.waitUntilDisplayed()
+        loginFailedToast.waitUntilDisplayed(timeout: 10)
         return loginFailedToast.label
     }
     
@@ -63,7 +67,6 @@ extension Login.LoginScreen {
     func tapLoginButtonSuccess() -> DashBoard.ProductScreen {
         loginButton.waitUntilDisplayed()
         loginButton.tap()
-        waitForScreenDisplay(timeout: 2.0)
-        return DashBoard.ProductScreen()
+        return DashBoard.ProductScreen() // waits up to 10s for the dashboard after the login API responds
     }
 }

@@ -14,21 +14,34 @@ extension DashBoard {
     struct ProductScreen: Screen {
         var displayElement: XCUIElement { titleLabel }
         init() {
-            waitForScreenDisplay()
+            waitForScreenDisplay(timeout: 10)
         }
     }
 }
 
 fileprivate extension DashBoard.ProductScreen {
-    var titleLabel: XCUIElement { app.staticTexts["DashBoard"].firstMatch }
+    /// The screen title is `.navigationTitle("Dashboard")`. A large nav title is exposed as the
+    /// navigation bar itself (identified by the title), not reliably as a static text, and the
+    /// match is case-sensitive.
+    static let navTitle = "Dashboard"
+    var titleLabel: XCUIElement { app.navigationBars[Self.navTitle].firstMatch }
     var loginSuccessToast: XCUIElement { app.staticTexts["loginSuccessAlert"].firstMatch }
     var searchBarTextField: XCUIElement { app.searchFields["Search Product"] }
-    var searchingCells: XCUIElement { app.cells.element }
+    var searchingCells: XCUIElement { app.cells.firstMatch } // .element crashes when several rows match
 }
 
 
 extension DashBoard.ProductScreen {
-   
+
+    /// Non-waiting-heavy check used to prove the dashboard is NOT on screen.
+    static var isShownQuickly: Bool {
+        XCUIApplication().navigationBars[navTitle].firstMatch.waitForExistence(timeout: 1)
+    }
+
+    var firstProductCellDisplayed: Bool {
+        app.cells.firstMatch.waitUntilDisplayed(timeout: 10)
+    }
+
     var loginSuccessAlertToast: String {
         loginSuccessToast.waitUntilDisplayed()
         return loginSuccessToast.label
@@ -43,13 +56,13 @@ extension DashBoard.ProductScreen {
     }
     
     var searchItemFound: Int {
-        searchingCells.waitUntilDisplayed()
-        return searchingCells.buttons.count
+        searchingCells.waitUntilDisplayed(timeout: 10)
+        return app.cells.count
     }
     
     @discardableResult
     func tapSearchElementItem() -> ProductDetails.ProductElement{
-        searchingCells.waitUntilDisplayed()
+        searchingCells.waitUntilDisplayed(timeout: 10)
         app.cells.element(boundBy: 0).tap()
         return ProductDetails.ProductElement()
     }

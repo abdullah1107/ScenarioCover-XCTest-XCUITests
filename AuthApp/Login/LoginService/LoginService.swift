@@ -8,9 +8,15 @@
 import Foundation
 import Combine
 
-struct LoginNetworkService{
+final class LoginNetworkService{
 
-    static func createUser<T:Decodable>(urlPath: URL, user: LoginUser, responseType: T.Type) -> AnyPublisher<T, Error>{
+    private let urlSession: URLSession
+
+    init(urlSession: URLSession = .shared) {
+        self.urlSession = urlSession
+    }
+
+     func createUser<T:Decodable>(urlPath: URL, user: LoginUser, responseType: T.Type) -> AnyPublisher<T, Error>{
         
         var request = URLRequest(url: urlPath)
         request.httpMethod = "POST"
@@ -24,7 +30,7 @@ struct LoginNetworkService{
             return Fail(error: NetworkError.encodeFailed).eraseToAnyPublisher()
         }
         
-        return URLSession.shared.dataTaskPublisher(for: request)
+        return urlSession.dataTaskPublisher(for: request)
             .tryMap { data, response in
                 guard let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {
                     throw NetworkError.invalidResponse
@@ -81,5 +87,5 @@ struct LoginNetworkService{
 //            }
 //        }.resume()
 //    }
-
+//
 //}

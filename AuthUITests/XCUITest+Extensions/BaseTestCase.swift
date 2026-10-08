@@ -8,13 +8,16 @@
 import XCTest
 
 class BaseXCTestSetup: XCTestCase {
-    
+
+    /// Override to pass extra launch arguments, e.g. `["--logged-in"]` to skip the login screen.
+    var additionalLaunchArguments: [String] { [] }
 
     override func setUpWithError() throws {
         try super.setUpWithError()
         let app = XCUIApplication()
         
         app.launchArguments.append("--uitesting")
+        app.launchArguments.append(contentsOf: additionalLaunchArguments)
         // Put setup code here. This method is called before the invocation of each test method in the class.
         app.launch()
         // In UI tests it is usually best to stop immediately when a failure occurs.

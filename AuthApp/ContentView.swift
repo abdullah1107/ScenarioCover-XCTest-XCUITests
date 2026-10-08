@@ -19,9 +19,10 @@ struct ContentView: View {
         VStack {
             if !isSplashShowing{
                 SplashView()
-            }else{
+            }
+            else{
                 if isLoggedIn{
-                    HomeScreen()
+                    DashboardProductView()
                 }else{
                     LoginView(isLoggedIn: $isLoggedIn)
                 }

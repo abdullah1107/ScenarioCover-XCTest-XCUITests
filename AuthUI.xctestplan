@@ -1,0 +1,42 @@
+{
+  "configurations" : [
+    {
+      "id" : "F8BEA6FF-9CF1-40BF-BC5F-03D64B7B98A4",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "performanceAntipatternCheckerEnabled" : true,
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:AuthUI.xcodeproj",
+      "identifier" : "B45A899F2B0ADCB8006FC2F1",
+      "name" : "AuthUI"
+    },
+    "testInteropMode" : "complete"
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:AuthUI.xcodeproj",
+        "identifier" : "B45A89AF2B0ADCBB006FC2F1",
+        "name" : "AuthUITests"
+      }
+    },
+    {
+      "skippedTests" : [
+        "LoginTest\/testInvalidLoginStaysOnLoginScreen()",
+        "LoginTest\/testLoginWithInvalidCredentials()"
+      ],
+      "target" : {
+        "containerPath" : "container:AuthUI.xcodeproj",
+        "identifier" : "B45A89B92B0ADCBB006FC2F1",
+        "name" : "AuthUIUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

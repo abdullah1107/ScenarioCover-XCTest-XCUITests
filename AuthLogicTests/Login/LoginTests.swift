@@ -90,7 +90,7 @@ final class LoginTests: XCTestCase {
         
         let expectation = XCTestExpectation(description: "Authentication expectation")
         
-        loginViewModel.creareNewUserStatus(username: "kminchelle", password: "0lelplR") { result in
+        loginViewModel.creareNewUserStatus(username: "emilys", password: "emilyspass") { result in
             switch result {
             case .success(let isAuthenticated):
                 XCTAssertTrue(isAuthenticated, "Authentication should succeed with valid credentials")
@@ -100,7 +100,7 @@ final class LoginTests: XCTestCase {
             expectation.fulfill()
         }
         
-        wait(for: [expectation], timeout: 5.0)
+        wait(for: [expectation], timeout: 10.0)
         
     }
     

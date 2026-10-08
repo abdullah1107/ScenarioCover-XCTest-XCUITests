@@ -24,6 +24,7 @@ class DashBoadProductViewModel: ObservableObject{
     func getAllProducts(){
         guard !isFetching else { return }
         isFetching = true
+        
         productNetworkService?.getAllProducts(endpoint:"https://dummyjson.com/products", limit: 10, skip: currentPage * 10, responseType: HomeDashBoard.self)
             .sink { completion in
                 switch completion {
@@ -45,7 +46,7 @@ class DashBoadProductViewModel: ObservableObject{
 }
 
 
-class ImageLoader: ObservableObject {
+final class ImageLoader: ObservableObject {
     @Published var downloadedImage: UIImage?
     private var cancellable: AnyCancellable?
     
@@ -73,7 +74,7 @@ class ImageLoader: ObservableObject {
 
 }
 
-class ImageCache {
+final class ImageCache {
     static let shared = ImageCache()
     private var cache = NSCache<NSString, UIImage>()
 
@@ -85,3 +86,21 @@ class ImageCache {
         cache.setObject(image, forKey: NSString(string: key))
     }
 }
+
+
+
+// Use mock data service for products
+//        if let dashboard = MockDataService.shared.loadProducts() {
+//            DispatchQueue.main.async { [weak self] in
+//                self?.products.append(contentsOf: dashboard.products)
+//                self?.currentPage += 1
+//                self?.isFetching = false
+//            }
+//        } else {
+//            DispatchQueue.main.async { [weak self] in
+//                self?.isFetching = false
+//                print("Failed to load products from mock data")
+//            }
+//        }
+
+// Original API call (commented out - uncomment to use API instead of mock data)
